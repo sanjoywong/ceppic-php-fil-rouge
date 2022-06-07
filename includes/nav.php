@@ -1,8 +1,8 @@
 <header>
     <nav>
-        <ul>
+        <ul style="list-style-type: none;">
             <li>
-                <a href="index.php" target="_blank" rel="noopener noreferrer">Accueil</a>
+                <a href="index.php" target="_blank" rel="noopener noreferrer" >Accueil</a>
             </li>
         </ul>
     </nav>

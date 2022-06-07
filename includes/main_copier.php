@@ -10,3 +10,18 @@
         // var_dump($fichier);
     require_once $fichier;
     ?>  -->
+
+
+
+
+$files = glob('./includes/*.inc.php');
+
+$page = isset($_GET['page']) ? $page = $_GET['page'] : "accueil";
+$page = "./includes/" . $page . ".inc.php";
+
+echo "Debut";
+if (in_array($page, $files))
+    echo require $page;
+else
+    require './includes/accueil.inc.php';
+    echo "Fin";

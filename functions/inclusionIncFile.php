@@ -2,8 +2,6 @@
 
 function inclusionIncFile(string $defaultPage): void
 {
-
-
   $files = glob('./includes/*.inc.php');
   $page = $_GET['page'] ?? $defaultPage;
 

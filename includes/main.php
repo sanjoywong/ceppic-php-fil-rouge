@@ -3,6 +3,6 @@ require_once './includes/nav.php';
 ?>
 <main>
     <?php
-        inclusionIncFile('contact');
+        inclusionIncFile($_GET['page']);
     ?>
 </main>

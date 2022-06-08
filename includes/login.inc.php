@@ -33,7 +33,7 @@ if (isset($_POST['frmLogin'])) {
         displayMessage("Pas d'erreurs");
     }
 }else{
-    $message = "Je ne viens pas du formulaire";
+    $username = $password ="";
     include './includes/frmLogin.php';
 }
 

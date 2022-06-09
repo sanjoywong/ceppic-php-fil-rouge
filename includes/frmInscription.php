@@ -12,6 +12,15 @@
         <input type="text" id="mail" name="mail" value="<?=$mail ?>" />
     </div>
     <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+    </div>
+    <div>
+        <label for="password1">Remet Password:</label>
+        <input type="password" id="password1" name="password1">
+
+    </div>
+    <div>
         <input type="reset" value="Effacer" />
         <input type="submit" value="Envoyer" />
     </div>

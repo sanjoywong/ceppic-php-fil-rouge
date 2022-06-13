@@ -1,3 +1,8 @@
+<?php
+
+session_start();
+?>
+
 <h1>login</h1>
 
 <?php
@@ -30,13 +35,23 @@ if (isset($_POST['frmLogin'])) {
         echo $messageErreur;
         include './includes/frmLogin.php';
     } else {
+        $_SESSION['loginUser'] = $username;
+        echo $_SESSION['loginUser'];  
         displayMessage("Pas d'erreurs");
+        
+          
     }
 }else{
-    $username = $password ="";
+    echo $_SESSION['loginUser'];
+    echo "tout va bien";
     include './includes/frmLogin.php';
 }
-
+/* 
+else{
+    $mail ="";
+    include './includes/frmLogin.php';
+}
+ */
 
 
 

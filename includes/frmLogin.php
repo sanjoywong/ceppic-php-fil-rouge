@@ -4,11 +4,11 @@
 
 <div>
     <label for="username">User name :</label>
-    <input type="text" id="username" name="username" value="anonymous"/>
+    <input type="text" id="username" name="username" value="anonymous" required/>
 </div>
 <div>
     <label for="password">mot de pass</label>
-    <input type="password" id="password" name="password">
+    <input type="password" id="password" name="password" required>
 </div>
 <div>
     <input type="reset" value="Effacer">

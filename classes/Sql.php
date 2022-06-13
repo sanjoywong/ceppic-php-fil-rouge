@@ -24,7 +24,7 @@ class Sql{
    }
    public function __destruct()
    {
-      // echo "the connection is ";
+
        // $this->connecxion= null;
    }
 

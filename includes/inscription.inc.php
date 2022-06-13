@@ -51,8 +51,9 @@ if (isset($_POST['frmInscription'])) {
        // $requete = "INSERT INTO utilisateurs (id_utilisateur,nom,prenom,mail,password) VALUES(NULL,'$nom','$prenom','$mail','$password');";
        $requete = "INSERT INTO utilisateurs (id_utilisateur, nom, prenom, mail, password)
             VALUES (NULL, '$nom', '$prenom', '$mail', '$password');";
-
+        
         $queryInsert = new Sql();
+        
         $queryInsert->inserer($requete);
         displayMessage("Requete ok");
         

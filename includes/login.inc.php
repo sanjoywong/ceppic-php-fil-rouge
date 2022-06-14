@@ -1,8 +1,6 @@
 <?php
-
 session_start();
 ?>
-
 <h1>login</h1>
 
 <?php
@@ -37,19 +35,18 @@ if (isset($_POST['frmLogin'])) {
     } else {
         $_SESSION['loginUser'] = $username;
         echo $_SESSION['loginUser'];  
-        displayMessage("Pas d'erreurs");
+        header('location: index.php?page=membre');
         
           
     }
 }else{
-    echo $_SESSION['loginUser'];
-    echo "tout va bien";
+    
+    $username ="";
     include './includes/frmLogin.php';
+    
 }
 /* 
 else{
-    $mail ="";
-    include './includes/frmLogin.php';
 }
  */
 

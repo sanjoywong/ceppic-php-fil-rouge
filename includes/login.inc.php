@@ -1,7 +1,5 @@
-<?php
-session_start();
-?>
-<h1>login</h1>
+
+<h1>entrer votre username et password</h1>
 
 <?php
 

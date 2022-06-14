@@ -3,7 +3,7 @@
 <form action="index.php?page=login" method="post">
 
 <div>
-    <label for="username">User name :</label>
+    <label for="username">User  name :</label>
     <input type="text" id="username" name="username" value="anonymous" required/>
 </div>
 <div>

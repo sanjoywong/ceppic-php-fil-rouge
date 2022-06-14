@@ -16,3 +16,7 @@ header nav ul li a {
     display: block;
     padding: 5px 10px;
 }
+
+.login {
+    float: right;
+}

@@ -25,11 +25,11 @@ class Sql{
 
    public function slt($tbl){
    //echo "Je suis la";
-    $s1 = 'select * from utilisateurs';
+    $s1 = "select * from $tbl";
    
-   var_dump($s1);
+  // var_dump($s1);
    //echo $stmt->;
-   echo "///Je suis la-ba***";
+   //echo "Je suis la-ba***";
    
     $arrayRt=$this->connecxion->query($s1)->fetchAll();
     return $arrayRt;

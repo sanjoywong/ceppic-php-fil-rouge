@@ -17,6 +17,7 @@
             <?php } else { ?>
                 <li><a href="index.php?page=inscription">inscription</a></li>
                 <li><a href="index.php?page=login">login</a></li>
+                <li><a href="index.php?page=admin">show users</a></li>
 
             <?php } ?>
         </ul>

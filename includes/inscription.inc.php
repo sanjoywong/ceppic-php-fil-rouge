@@ -51,12 +51,43 @@ if (isset($_POST['frmInscription'])) {
        // $requete = "INSERT INTO utilisateurs (id_utilisateur,nom,prenom,mail,password) VALUES(NULL,'$nom','$prenom','$mail','$password');";
        $requete = "INSERT INTO utilisateurs (id_utilisateur, nom, prenom, mail, password)
             VALUES (NULL, '$nom', '$prenom', '$mail', '$password');";
-        
+           
+        $tbl = "utilisateurs";
         $queryInsert = new Sql();
-        
         $queryInsert->inserer($requete);
-        displayMessage("Requete ok");
-        
+
+        $querySelect = array();
+        $querySlt = new Sql();
+        $querySelect = $querySlt->slt($tbl);
+        print_r($querySelect[0]);
+        echo count($querySelect); 
+        echo "itùs begere"."<br>";
+        if (count($querySelect)){
+            echo "itqsfsqfdffffff"."<br>";
+//            $messagetb = "<ul>";
+            $messagetb = "<table>";
+            for ($i=0; $i <count($querySelect) ; $i++) { 
+                
+                $messagetb .="<tr>";
+                $messagetb .="<td>";
+                //var_dump();
+                $messagetb .=$querySelect[$i]['nom'];
+                $messagetb .="</td>";
+                $messagetb .="<td>";
+                $messagetb .=$querySelect[$i]['prenom'];
+                $messagetb .="</td>";
+                $messagetb .="<td>";
+                $messagetb .=$querySelect[$i]['mail'];
+                $messagetb .="</td>";
+                $messagetb .="</tr>";
+            }
+            
+        }
+            $messagetb = "</table>";
+  //         
+   var_dump($messagetb);
+            echo $messagetb;
+    }
     }
 
 } else {

@@ -18,10 +18,25 @@ class Sql{
        }
    }
    public function inserer($query){
-      
+      //var_dump($query);
        $this->connecxion->exec($query);
        
    }
+
+   public function slt($tbl){
+   //echo "Je suis la";
+    $s1 = 'select * from utilisateurs';
+   
+   var_dump($s1);
+   //echo $stmt->;
+   echo "///Je suis la-ba***";
+   
+    $arrayRt=$this->connecxion->query($s1)->fetchAll();
+    return $arrayRt;
+    
+
+   }
+
    public function __destruct()
    {
 

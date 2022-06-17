@@ -40,7 +40,7 @@ class Sql{
    public function __destruct()
    {
 
-       // $this->connecxion= null;
+       unset($this->connecxion);
    }
 
 }

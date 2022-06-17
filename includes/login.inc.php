@@ -7,13 +7,13 @@ if (isset($_POST['frmLogin'])) {
 
     $message = "Je viens du submit";
 
-    $username = htmlentities(trim($_POST['username']));
+    $email = htmlentities(trim($_POST['email']));
     $password = htmlentities(trim($_POST['password']));
 
     $erreurs = array();
 
-    if (mb_strlen($username) === 0) {
-        array_push($erreurs, "Il manque vore username");
+    if (mb_strlen($email) === 0) {
+        array_push($erreurs, "Il manque vore E-mail");
     };
 
     if (mb_strlen($password) === 0) {
@@ -31,9 +31,15 @@ if (isset($_POST['frmLogin'])) {
         echo $messageErreur;
         include './includes/frmLogin.php';
     } else {
-        $_SESSION['loginUser'] = $username;
-        echo $_SESSION['loginUser'];  
-        header('location: index.php?page=membre');
+        $_SESSION['loginUser'] = $email;
+        $toEmail = $email;
+        $fromEmail = 'contact@ceppic-php-fil-rouge.fr';
+        $sujetEmail = 'Login Sucess!';
+        $messageEmail = $email.'Vous étes bien connecté !';
+        
+         sendEmail($toEmail,$fromEmail,$sujetEmail,$messageEmail);
+        
+       // header('location: index.php?page=membre');
         
           
     }

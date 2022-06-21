@@ -37,9 +37,9 @@ if (isset($_POST['frmLogin'])) {
         $sujetEmail = 'Login Sucess!';
         $messageEmail = $email.'Vous étes bien connecté !';
         
-         sendEmail($toEmail,$fromEmail,$sujetEmail,$messageEmail);
+        sendEmail($toEmail,$fromEmail,$sujetEmail,$messageEmail);
         
-       // header('location: index.php?page=membre');
+       header('location: index.php?page=membre');
         
           
     }

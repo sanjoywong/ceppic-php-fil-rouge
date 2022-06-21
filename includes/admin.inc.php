@@ -2,7 +2,7 @@
 
 <?php
 
-$tbl = "utilisateurs";
+$tbl = "select * from utilisateurs";
 $querySelect = array();
 $querySlt = new Sql();
 $querySelect = $querySlt->slt($tbl);
@@ -51,10 +51,15 @@ if (count($querySelect)){
         $messagetb .=$querySelect[$i]['mail'];
         $messagetb .="</td>";
         $messagetb .="<td>";
-        $messagetb .="<a href=\"index.php?page=edit\"&id=";
+        $messagetb .="<a href=\"index.php?page=edit&id=";
         $messagetb .=$querySelect[$i]['id_utilisateur'];
-        $messagetb .=" class='btn'>Modifier</a>";
-        $messagetb .="</td>";        
+        $messagetb .="\" class='btn'>Modifier</a>";
+        $messagetb .="</td>";   
+          
+        $messagetb .="<td><a href=\"index.php?page=supp&id=";
+        $messagetb .=$querySelect[$i]['id_utilisateur'] ;
+        $messagetb .="\" class=\"btn btn-supp\" onclick=\"return confirm('Etes vous certain de supprimer cet utilisateur ?')\">Supprimer</a></td>";         
+      
         $messagetb .="</tr>";
     }
     

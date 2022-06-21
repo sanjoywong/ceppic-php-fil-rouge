@@ -11,11 +11,11 @@
                 <a href="index.php?page=accueil" target="_blank" rel="noopener noreferrer">Accueil</a>
             </li>
             <li><a href="index.php?page=contact">contact</a></li>
-            <?php if (isset($_SESSION['loginUser'])) { ?>
+            <?php if (isset($_SESSION['loginUser']) && $_SESSION['loginUser']===true) { ?>
                 <span class="login">
                     <li><a href="index.php?page=logout">logout</a></li>
                     <li><strong><?=$_SESSION['loginUser'] ?></strong></li>
-                    <li><a href="index.php?page=users"><i class="fa fa-user" ></i></a></li>
+                    <li><a href="index.php?page=users"><i class="fa-regular fa-user" ></i></a></li>
                   <!--   <li><img src="./assets/img/user.png" alt="test the icon" srcset="" ></li> -->
                 </span>
             <?php } else { ?>

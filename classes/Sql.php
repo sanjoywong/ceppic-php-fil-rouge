@@ -31,9 +31,30 @@ class Sql{
    //echo $stmt->;
    //echo "Je suis la-ba***";
    
-    $arrayRt=$this->connecxion->query($s1)->fetchAll();
-    return $arrayRt;
-    
+    $arrayRt=$this->connecxion->query($tbl)->fetchAll();
+    return $arrayRt; 
+
+   }
+   
+   public function udt($sql){
+//    var_dump($sql);
+    try{
+        
+        $this->connecxion->exec($sql);
+        echo "updated the record !";
+    } catch(PDOException $e){
+        die("erreus：cannot excute ce sql $sql. " . $e->getMessage());
+    }
+
+   }
+   public function supprimer($requete){
+    try{
+        
+        $this->connecxion->exec($requete);
+        echo "deleted the record !";
+    } catch(PDOException $e){
+        die("erreus：cannot excute ce sql $requete. " . $e->getMessage());
+    }
 
    }
 

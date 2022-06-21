@@ -26,8 +26,16 @@ if (count($querySelect)){
     $messagetb .= "<th>";
     $messagetb .= "E-mail";
     $messagetb .= "</th>";
+    
+    $messagetb .= "<th>";
+    $messagetb .= "Modifier";
+    $messagetb .= "</th>";
+    
+    $messagetb .= "<th>";
+    $messagetb .= "Suppremer";
+    $messagetb .= "</th>";
+    
     $messagetb .= "</tr>";
-
     for ($i=0; $i <count($querySelect) ; $i++) { 
         
         $messagetb .= "<tr>";
@@ -42,6 +50,11 @@ if (count($querySelect)){
         $messagetb .="<td>";
         $messagetb .=$querySelect[$i]['mail'];
         $messagetb .="</td>";
+        $messagetb .="<td>";
+        $messagetb .="<a href=\"index.php?page=edit\"&id=";
+        $messagetb .=$querySelect[$i]['id_utilisateur'];
+        $messagetb .=" class='btn'>Modifier</a>";
+        $messagetb .="</td>";        
         $messagetb .="</tr>";
     }
     

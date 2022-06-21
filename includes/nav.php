@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <?php
  session_start();
 ?>
@@ -10,9 +12,11 @@
             </li>
             <li><a href="index.php?page=contact">contact</a></li>
             <?php if (isset($_SESSION['loginUser'])) { ?>
-                <span class="Login">
+                <span class="login">
                     <li><a href="index.php?page=logout">logout</a></li>
-                    <li><img src="./assets/img/user.png" alt="test the icon" srcset="" ></li>
+                    <li><strong><?=$_SESSION['loginUser'] ?></strong></li>
+                    <li><a href="index.php?page=users"><i class="fa fa-user" ></i></a></li>
+                  <!--   <li><img src="./assets/img/user.png" alt="test the icon" srcset="" ></li> -->
                 </span>
             <?php } else { ?>
                 <li><a href="index.php?page=inscription">inscription</a></li>

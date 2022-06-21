@@ -2,6 +2,12 @@
 
 <?php
  session_start();
+/*  $_SESSION['start'] = array(0=> 'active', 'registered' => time());
+if ((time() - $_SESSION['start']['registered']) > (60 * 2)) {
+    unset($_SESSION['start']);
+    echo "session destroyed";
+}
+$_SESSION['start'] = time(); */
 ?>
 
 <header>

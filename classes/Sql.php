@@ -25,9 +25,9 @@ class Sql{
 
    public function slt($tbl){
    //echo "Je suis la";
-    $s1 = "select * from $tbl";
+  //  $s1 = "select * from $tbl";
    
-  // var_dump($s1);
+   //var_dump($tbl);
    //echo $stmt->;
    //echo "Je suis la-ba***";
    

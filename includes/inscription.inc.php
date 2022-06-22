@@ -48,13 +48,16 @@ if (isset($_POST['frmInscription'])) {
 
 
         $password = password_hash($password, PASSWORD_DEFAULT);
+
+        $inscrip = new Utilisateur();
+        $inscrip->inscrireUtilisateur($nom, $prenom, $mail, $password);
        // $requete = "INSERT INTO utilisateurs (id_utilisateur,nom,prenom,mail,password) VALUES(NULL,'$nom','$prenom','$mail','$password');";
-       $requete = "INSERT INTO utilisateurs (id_utilisateur, nom, prenom, mail, password)
+       /* $requete = "INSERT INTO utilisateurs (id_utilisateur, nom, prenom, mail, password)
             VALUES (NULL, '$nom', '$prenom', '$mail', '$password');";
            
         
         $queryInsert = new Sql();
-        $queryInsert->inserer($requete);
+        $queryInsert->inserer($requete); */
         displayMessage("requete ok!");
     }
 

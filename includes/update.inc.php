@@ -51,12 +51,14 @@ if (isset($_POST['frmUpdate'])) {
 
         $password = password_hash($password, PASSWORD_DEFAULT);
        // $requete = "INSERT INTO utilisateurs (id_utilisateur,nom,prenom,mail,password) VALUES(NULL,'$nom','$prenom','$mail','$password');";
-       $requete = "UPDATE utilisateurs set nom='$nom', prenom ='$prenom', mail='$mail', password ='$password'
+      /*  $requete = "UPDATE utilisateurs set nom='$nom', prenom ='$prenom', mail='$mail', password ='$password'
             where id_utilisateur = '$id';";
            
         
         $sqlUpdate = new Sql();
-        $sqlUpdate->udt($requete);
+        $sqlUpdate->udt($requete); */
+        $updateUtilisateur = new Utilisateur();
+        $updateUtilisateur->modifierUtilisateur($nom, $prenom, $mail, $password,$id);
         displayMessage("update ok!");
     }
 

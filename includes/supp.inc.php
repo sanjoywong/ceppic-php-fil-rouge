@@ -6,9 +6,7 @@ if (!isset($_GET['id']))
 $idUser = $_GET['id'];
 
 
-$requete = "DELETE FROM utilisateurs WHERE id_utilisateur = '$idUser' ";
-
-$requeteSupp = new Sql();
-$requeteSupp->supprimer($requete);
+$requeteSupp = new Utilisateur();
+$requeteSupp->supprimerUtilisateur($idUser);
 
 header('Location: ./index.php?page=admin');

@@ -1,6 +1,6 @@
 <?php
 
-interface Utilisateur
+interface interfaceUtilisateur
 {
 
     public function inscrireUtilisateur();

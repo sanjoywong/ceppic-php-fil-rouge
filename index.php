@@ -1,10 +1,11 @@
 <?php
+
 spl_autoload_register(function($className){
     require './classes/'.$className.'.php';
 });
-
-
 require_once './vendor/autoload.php';
+
+
 date_default_timezone_set('Europe/Paris');
 
 require_once './functions/autoLoadfunciton.php';

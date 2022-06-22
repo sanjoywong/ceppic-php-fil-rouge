@@ -60,6 +60,22 @@ if (isset($_POST['frmLogin'])) {
         
         // header('location: index.php?page=membre');
         echo $message;
+        echo "you will be redirected to accueil in <span id=seconds>5</span>";
+ echo " 
+ <script>
+ var seconds = 5;
+ setInterval(
+   function(){
+     if (seconds <= 1) {
+       location.replace('$url?page=acceuil');
+     }
+     else {
+       document.getElementById('seconds').innerHTML = --seconds;
+     }
+   },
+   1000
+ );
+</script>";
         //var_dump($_SERVER[HTTP_ORIGIN]);
         $url = $_SERVER['HTTP_ORIGIN'] . dirname($_SERVER['REQUEST_URI']) . "/";
         

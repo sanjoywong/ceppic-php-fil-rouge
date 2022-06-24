@@ -15,6 +15,12 @@
 # AWS User-specific
 .idea/**/aws.xml
 
+docker
+
+# Composer
+composer.lock
+vendor
+
 # Generated files
 .idea/**/contentModel.xml
 

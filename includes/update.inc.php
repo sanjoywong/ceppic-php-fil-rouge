@@ -1,18 +1,20 @@
-<h1>Inscription</h1>
+<h1>Update</h1>
 <?php
 
+//var_dump(isset($_POST['frmUpdate']));
 
-
-if (isset($_POST['frmInscription'])) {
-    $message = "Je viens du formulaire";
+if (isset($_POST['frmUpdate'])) {
+   // $message = "Je viens du formulaire";
 
     $nom = htmlentities(trim($_POST['nom']));
     $prenom = htmlentities(trim($_POST['prenom']));
     $mail = htmlentities(trim($_POST['mail']));
     $password = htmlentities(trim($_POST['password']));
     $password1 = htmlentities(trim($_POST['password1']));
+    $id = htmlentities(trim($_POST['id']));
 
-
+//   var_dump($_POST['nom']);
+//   var_dump($_POST['id']);
 
     $erreurs = array();
 
@@ -48,23 +50,25 @@ if (isset($_POST['frmInscription'])) {
 
 
         $password = password_hash($password, PASSWORD_DEFAULT);
-
-        $inscrip = new Utilisateur();
-        $inscrip->inscrireUtilisateur($nom, $prenom, $mail, $password);
        // $requete = "INSERT INTO utilisateurs (id_utilisateur,nom,prenom,mail,password) VALUES(NULL,'$nom','$prenom','$mail','$password');";
-       /* $requete = "INSERT INTO utilisateurs (id_utilisateur, nom, prenom, mail, password)
-            VALUES (NULL, '$nom', '$prenom', '$mail', '$password');";
+      /*  $requete = "UPDATE utilisateurs set nom='$nom', prenom ='$prenom', mail='$mail', password ='$password'
+            where id_utilisateur = '$id';";
            
         
-        $queryInsert = new Sql();
-        $queryInsert->inserer($requete); */
-        displayMessage("requete ok!");
+        $sqlUpdate = new Sql();
+        $sqlUpdate->udt($requete); */
+        $updateUtilisateur = new Utilisateur();
+        $updateUtilisateur->modifierUtilisateur($nom, $prenom, $mail, $password,$id);
+        displayMessage("update ok!");
     }
 
 
 } else {
-    $nom = $prenom = $mail = "";
-    include './includes/frmInscription.php';
+
+    //var_dump(($_POST['frmUpdate']));
+
+    // $nom = $prenom = $mail = "";
+     include './includes/accueil.php';
     //echo $message;
 }
 

@@ -3,8 +3,8 @@
 <form action="index.php?page=login" method="post">
 
 <div>
-    <label for="username">User name :</label>
-    <input type="text" id="username" name="username" value="anonymous" required/>
+    <label for="email">User  name :</label>
+    <input type="text" id="email" name="email"  required/>
 </div>
 <div>
     <label for="password">mot de pass</label>

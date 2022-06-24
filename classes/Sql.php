@@ -18,14 +18,50 @@ class Sql{
        }
    }
    public function inserer($query){
-      
+      //var_dump($query);
        $this->connecxion->exec($query);
        
    }
+
+   public function slt($tbl){
+   //echo "Je suis la";
+  //  $s1 = "select * from $tbl";
+   
+   //var_dump($tbl);
+   //echo $stmt->;
+   //echo "Je suis la-ba***";
+   
+    $arrayRt=$this->connecxion->query($tbl)->fetchAll();
+    return $arrayRt; 
+
+   }
+   
+   public function udt($sql){
+//    var_dump($sql);
+    try{
+        
+        $this->connecxion->exec($sql);
+        echo "updated the record !";
+    } catch(PDOException $e){
+        die("erreus：cannot excute ce sql $sql. " . $e->getMessage());
+    }
+
+   }
+   public function supprimer($requete){
+    try{
+        
+        $this->connecxion->exec($requete);
+        echo "deleted the record !";
+    } catch(PDOException $e){
+        die("erreus：cannot excute ce sql $requete. " . $e->getMessage());
+    }
+
+   }
+
    public function __destruct()
    {
 
-       // $this->connecxion= null;
+       unset($this->connecxion);
    }
 
 }
